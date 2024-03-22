@@ -7,15 +7,16 @@ def make_hash(plaintext, hash_type='sha256', iterations=100000, pepper=None):
     if pepper:
         plaintext += pepper
     hashed = hashlib.pbkdf2_hmac(hash_type, plaintext.encode('utf-8'), salt.encode('utf-8'), iterations)
-    return f"{hash_type}${iterations}${salt}${hashed.hex()}"
+    return f"{hash_type}@{iterations}@{salt}@{hashed.hex()}"
 
 def verify_hash(plaintext, hashed_info, pepper=None):
-    hash_type, iterations, salt, expected_hash = hashed_info.split('$')
+    hash_type, iterations, salt, expected_hash = hashed_info.split('@')
     iterations = int(iterations)
     if pepper:
         plaintext += pepper
     hashed = hashlib.pbkdf2_hmac(hash_type, plaintext.encode('utf-8'), salt.encode('utf-8'), iterations)
     return hashed.hex() == expected_hash
+
 
 def main():
     parser = argparse.ArgumentParser(description='Simple password hashing and verification tool')
@@ -31,12 +32,15 @@ def main():
         print(hashed)
     elif args.verify:
         plaintext, hashed_info = args.verify
+        if hashed_info.startswith("'") and hashed_info.endswith("'"):
+            hashed_info = hashed_info[1:-1]
         if verify_hash(plaintext, hashed_info, args.pepper):
             print("Hashes match!")
         else:
             print("Hashes don't match!")
     else:
         parser.print_help()
+
 
 if __name__ == "__main__":
     main()
