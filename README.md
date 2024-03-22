@@ -27,11 +27,6 @@ This is a simple password hashing and verification tool implemented in Python. T
     ```
 
 ## Generating Hashes
-
->Full example:
->python main.py --make qwerty123 --pepper strongerhash --hash-type MD5 --iterations 500000
->>Output:
->>MD5@500000@967274c4840a87860275f669fcec14ef@a07c1d24ee0ab9c09afb738da687ea3e
 ### Click for example
 
 <b>This command generates a salted hash for a plaintext password, run:<b>
@@ -109,9 +104,17 @@ python main.py --make <plaintext> --pepper <pepper>
 </details>
 <br>
 
-
 <b>Help<b>
 ```bash
 python main.py --help or -h
 ```
+
+## Full example:
+### Linux
+![linux](https://github.com/LupusJM/SecurePasswordTool/assets/163419314/6d5f9120-7b80-43d8-ba86-404ee16aca1b)
+
+### Windows
+![windows](https://github.com/LupusJM/SecurePasswordTool/assets/163419314/9930a448-10c0-428d-b49e-a4f74cc07d5e)
+
+
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/lupusjm/SecurePasswordTool/blob/main/LICENSE)
