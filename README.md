@@ -27,8 +27,12 @@ This is a simple password hashing and verification tool implemented in Python. T
     ```
 
 ## Generating Hashes
+
+>Full example:
+>python main.py --make qwerty123 --pepper strongerhash --hash-type MD5 --iterations 500000
+>>Output:
+>>MD5@500000@967274c4840a87860275f669fcec14ef@a07c1d24ee0ab9c09afb738da687ea3e
 ### Click for example
-<br>
 
 <b>This command generates a salted hash for a plaintext password, run:<b>
 ```bash
@@ -49,17 +53,16 @@ python main.py --make <plaintext>
 python main.py --verify <plaintext> <hash_info>
 ```
 <details>
-  <summary>Example Windows:</summary>
-
-  ```bash
-  python main.py --verify mypassword "sha256$100000$8248dcf46b2caa79f91361a26dc80608$db17de35bdeb5ecf5c9ae953f1383a8023e8494c2842e807fec49c7e4cdd8cdd"
-  ```
-</details>
-<details>
-  <summary>Example Linux:</summary>
+  <summary>Example:</summary>
   
   ```bash
-  python main.py --verify mypassword 'sha256$100000$8248dcf46b2caa79f91361a26dc80608$db17de35bdeb5ecf5c9ae953f1383a8023e8494c2842e807fec49c7e4cdd8cdd'
+  python main.py --verify mypassword sha256@100000@303bb288988c281d9b199e240f2b6385@9d0563c55a5e713c1140e0d007bf6244f6d99f449cc5e6adb74ba962f4b9f2d7
+  ```
+  ```bash
+  python main.py --verify mypassword "sha256@100000@303bb288988c281d9b199e240f2b6385@9d0563c55a5e713c1140e0d007bf6244f6d99f449cc5e6adb74ba962f4b9f2d7"
+  ```
+  ```bash
+  python main.py --verify mypassword 'sha256@100000@303bb288988c281d9b199e240f2b6385@9d0563c55a5e713c1140e0d007bf6244f6d99f449cc5e6adb74ba962f4b9f2d7'
   ```
 </details>
 <br>
@@ -107,7 +110,7 @@ python main.py --make <plaintext> --pepper <pepper>
 <br>
 
 
-<b>Help:<b>
+<b>Help<b>
 ```bash
 python main.py --help or -h
 ```
