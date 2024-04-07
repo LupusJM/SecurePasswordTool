@@ -1,6 +1,6 @@
 # Secure Password Tool
 
-This is a simple password hashing and verification tool implemented in Python. The script allows users to generate salted hashes for plaintext passwords and verify plaintext against hashed information. It supports various hash types, allows customization of the number of iterations for hashing, and provides an option to include a pepper value for additional security. The tool provides a convenient command-line interface for interacting with its functionalities.
+This is a simple password hashing and verification tool implemented in Python. The script allows users to generate salted hashes for plaintext passwords and verify plaintext against hashed information. Storing hashes into SQLite database. It supports various hash types, allows customization of the number of iterations for hashing, and provides an option to include a pepper value for additional security. The tool provides a convenient command-line interface for interacting with its functionalities.
 ## Features
 
 - Generate salted hashes for plaintext passwords.
@@ -9,6 +9,7 @@ This is a simple password hashing and verification tool implemented in Python. T
 - Customizable number of iterations for hashing (default: 100,000).
 - Option to include a pepper value for enhanced security.
 - Simple command-line interface for easy interaction.
+- Database support for storing and deleting passwords.
 
 ## Usage
 
