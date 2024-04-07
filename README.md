@@ -105,6 +105,19 @@ python main.py --make <plaintext> --pepper <pepper>
 </details>
 <br>
 
+<b>This command deletes a stored hash with the specified ID, run:<b>
+```bash
+python main.py --delete <password_id>
+```
+<details>
+  <summary>Example:</summary>
+
+  ```bash
+  python main.py --delete 2
+  ```
+</details>
+<br>
+
 <b>Help<b>
 ```bash
 python main.py --help or -h
